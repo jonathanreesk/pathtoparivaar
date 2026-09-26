@@ -625,6 +625,9 @@ h1, h2, h3, p { margin: 0; }
   transition: background .3s var(--ease), transform .4s var(--ease-out);
 }
 .contact-email:hover { background: rgba(255,255,255,.18); color: var(--white); transform: translateY(-2px); }
+.contact-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.contact-wa { background: #25D366; border-color: #25D366; color: #0B3B24; }
+.contact-wa:hover { background: #3BE07A; color: #0B3B24; }
 .contact-place { display: inline-flex; align-items: center; gap: 8px; font-size: 16px !important; color: var(--gold) !important; }
 .contact-form { display: flex; flex-direction: column; gap: 16px; }
 .contact-form label { display: flex; flex-direction: column; gap: 8px; font-size: 15px; font-weight: 500; }
@@ -729,6 +732,15 @@ h1, h2, h3, p { margin: 0; }
 }
 .bubble.me { align-self: flex-end; background: var(--teal); color: var(--white); border-color: var(--teal); border-radius: 18px 18px 4px 18px; }
 @keyframes bubble-in { from { opacity: 0; transform: translateY(8px) scale(.96); } to { opacity: 1; transform: none; } }
+.chat-quick { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; animation: bubble-in .5s var(--ease-out) .08s both; }
+.chat-quick-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 46px; border-radius: 12px;
+  font: 600 15px var(--sans); text-decoration: none; color: var(--white); background: var(--teal);
+  transition: transform .35s var(--ease-out), filter .25s var(--ease);
+}
+.chat-quick-btn:hover { color: var(--white); transform: translateY(-2px); filter: brightness(1.08); }
+.chat-quick-wa { background: #25D366; color: #0B3B24; }
+.chat-quick-wa:hover { color: #0B3B24; }
 .chat-options { display: flex; flex-direction: column; gap: 8px; }
 .chat-option {
   text-align: left; padding: 11px 14px; border-radius: 12px; border: 1px solid var(--line); background: var(--white);
