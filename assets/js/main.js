@@ -341,6 +341,56 @@
     });
   }
 
+  /* ---------- Term definitions (acronyms and Hindi words) ---------- */
+  var tipEl = document.createElement('div');
+  tipEl.className = 'term-tip';
+  tipEl.id = 'term-tip';
+  tipEl.setAttribute('role', 'tooltip');
+  document.body.appendChild(tipEl);
+  var tipFor = null, tipPinned = false;
+
+  function showTip(el) {
+    var text = el.getAttribute('data-tip') || '';
+    var cut = text.indexOf(': ');
+    var title = cut > -1 ? text.slice(0, cut) : el.textContent;
+    var def = cut > -1 ? text.slice(cut + 2) : text;
+    tipEl.innerHTML = '<b></b><span></span>';
+    tipEl.querySelector('b').textContent = title;
+    tipEl.querySelector('span').textContent = def;
+    if (tipFor && tipFor !== el) { tipFor.classList.remove('is-open'); tipFor.removeAttribute('aria-describedby'); }
+    tipFor = el;
+    el.classList.add('is-open');
+    el.setAttribute('aria-describedby', 'term-tip');
+    var r = el.getBoundingClientRect(), w = tipEl.offsetWidth, h = tipEl.offsetHeight;
+    var left = Math.min(Math.max(12, r.left + r.width / 2 - w / 2), window.innerWidth - w - 12);
+    var top = r.top - h - 10;
+    if (top < 12) top = r.bottom + 10;
+    tipEl.style.left = left + 'px';
+    tipEl.style.top = top + 'px';
+    tipEl.classList.add('is-on');
+  }
+  function hideTip() {
+    if (!tipFor) return;
+    tipFor.classList.remove('is-open');
+    tipFor.removeAttribute('aria-describedby');
+    tipFor = null; tipPinned = false;
+    tipEl.classList.remove('is-on');
+  }
+  document.querySelectorAll('abbr.term').forEach(function (el) {
+    el.addEventListener('mouseenter', function () { if (!tipPinned) showTip(el); });
+    el.addEventListener('mouseleave', function () { if (!tipPinned) hideTip(); });
+    el.addEventListener('focus', function () { showTip(el); });
+    el.addEventListener('blur', function () { if (!tipPinned) hideTip(); });
+    el.addEventListener('click', function (e) {
+      e.stopPropagation();
+      if (tipFor === el && tipPinned) { hideTip(); return; }
+      showTip(el); tipPinned = true;
+    });
+  });
+  document.addEventListener('click', hideTip);
+  window.addEventListener('scroll', hideTip, { passive: true });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') hideTip(); });
+
   /* ---------- Chat ---------- */
   var chat = document.getElementById('chat');
   var fab = document.getElementById('chat-fab');

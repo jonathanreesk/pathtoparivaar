@@ -681,6 +681,26 @@ h1, h2, h3, p { margin: 0; }
 .faq[open] .faq-body { animation: faq-in .45s var(--ease-out); }
 @keyframes faq-in { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
 
+/* ---------- Terms and glossary ---------- */
+abbr.term {
+  text-decoration: underline dotted; text-decoration-thickness: 1.5px; text-underline-offset: 3px;
+  text-decoration-color: color-mix(in srgb, currentColor 55%, transparent); cursor: help; border-radius: 3px;
+}
+abbr.term:hover, abbr.term:focus-visible, abbr.term.is-open { text-decoration-color: var(--amber); }
+.term-tip {
+  position: fixed; z-index: 150; max-width: min(300px, calc(100vw - 24px)); padding: 12px 14px; border-radius: 12px;
+  background: var(--ink); color: var(--white); font: 400 14px/1.5 var(--sans); box-shadow: var(--shadow-lg);
+  opacity: 0; transform: translateY(4px); pointer-events: none; transition: opacity .18s var(--ease), transform .25s var(--ease-out);
+}
+.term-tip.is-on { opacity: 1; transform: none; }
+.term-tip b { display: block; color: var(--gold); font-weight: 700; margin-bottom: 2px; }
+.glossary { margin-top: clamp(56px, 7vw, 88px); }
+.gl-list { margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.gl-item { padding: 18px 20px; border-radius: 14px; background: var(--white); border: 1px solid var(--line); }
+.gl-item dt { font-weight: 700; font-size: 16.5px; }
+.gl-item dt span { display: block; font-weight: 500; font-size: 14px; color: var(--teal); margin-top: 2px; }
+.gl-item dd { margin: 8px 0 0; font-size: 15px; line-height: 1.6; color: var(--ink-2); }
+
 /* ---------- Contact ---------- */
 .contact {
   position: relative; overflow: hidden; isolation: isolate;
@@ -931,7 +951,7 @@ h1, h2, h3, p { margin: 0; }
   .hero-controls { gap: 6px; bottom: 28px; }
   .dot { width: 22px; }
   .dot.is-active { width: 40px; }
-  .grid-3, .nashik-grid, .approach-grid, .stats, .fw-phases, .fw-steps, .team-people { grid-template-columns: 1fr; }
+  .grid-3, .nashik-grid, .approach-grid, .stats, .fw-phases, .fw-steps, .team-people, .gl-list { grid-template-columns: 1fr; }
   .nashik-grid { grid-template-areas: "feat" "a" "b" "c" "d"; }
   .nashik-feature { min-height: 380px; }
   .path-list { grid-template-columns: 1fr; }
