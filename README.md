@@ -7,7 +7,7 @@ Static site with no build step. Open `index.html`, or deploy the folder as-is to
 - `index.html`: page content, SEO meta tags, and JSON-LD structured data (NGO, WebSite, FAQPage)
 - `assets/css/styles.css`: all styles, animations, and responsive rules
 - `assets/js/main.js`: hero slider, scroll reveal, sticky header, back-to-top, chat panel, mobile menu
-- `assets/img/`: founders photo and favicon
+- `assets/img/`: social share image and favicon
 - `robots.txt`, `sitemap.xml`, `site.webmanifest`: SEO and install metadata
 
 ## Before going live
