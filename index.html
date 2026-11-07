@@ -636,11 +636,18 @@
     </div>
     <p class="contact-place"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 21s-6-5.6-6-11a6 6 0 0112 0c0 5.4-6 11-6 11z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.2" fill="currentColor"/></svg>Nashik, Maharashtra, India</p>
   </div>
-  <form id="contact-form" class="contact-form" action="mailto:hello@pathtoparivaar.org" method="post" enctype="text/plain">
-    <label>Your name<input type="text" name="name" autocomplete="name" required></label>
-    <label>Email<input type="email" name="email" autocomplete="email" required></label>
-    <label>How would you like to get involved?<textarea name="message" id="contact-message" rows="4" required></textarea></label>
-    <button type="submit" class="btn btn-amber">Send message</button>
+  <!-- Set data-formspree to the Formspree form id (formspree.io/f/<id>). Left empty, the form falls back to email. -->
+  <form id="contact-form" class="contact-form" action="mailto:hello@pathtoparivaar.org" method="post" enctype="text/plain" data-formspree="">
+    <label>Your name<input type="text" name="name" autocomplete="name" required maxlength="100"></label>
+    <div class="contact-row">
+      <label>Email<input type="email" name="email" autocomplete="email" maxlength="200"></label>
+      <label>Phone or WhatsApp<input type="tel" name="phone" autocomplete="tel" maxlength="40" placeholder="+91"></label>
+    </div>
+    <p class="contact-hint">An email or a phone number is enough, so we can reply.</p>
+    <label>How would you like to get involved?<textarea name="message" id="contact-message" rows="4" required maxlength="2000"></textarea></label>
+    <label class="hp" aria-hidden="true">Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+    <p class="contact-status" id="contact-status" role="status" aria-live="polite"></p>
+    <button type="submit" class="btn btn-amber" id="contact-submit">Send message</button>
   </form>
 </section>
 

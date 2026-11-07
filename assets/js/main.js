@@ -258,6 +258,7 @@
   /* ---------- Contact prefill ---------- */
   var message = document.getElementById('contact-message');
   function prefillContact(text) {
+    showForm();
     if (text && !message.value.trim()) message.value = text;
     document.getElementById('contact').scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
     setTimeout(function () {
@@ -272,6 +273,73 @@
       prefillContact(a.getAttribute('data-topic'));
     });
   });
+
+  /* ---------- Contact form: sent through Formspree when configured ---------- */
+  var form = document.getElementById('contact-form');
+  var formStatus = document.getElementById('contact-status');
+  var formButton = document.getElementById('contact-submit');
+  var formspreeId = (form.getAttribute('data-formspree') || '').trim();
+  var sentPanel = null;
+
+  function setStatus(text, kind) {
+    formStatus.textContent = text;
+    formStatus.className = 'contact-status' + (kind ? ' is-' + kind : '');
+  }
+
+  function showForm() {
+    if (sentPanel) { sentPanel.remove(); sentPanel = null; }
+    form.hidden = false;
+  }
+
+  if (formspreeId) {
+    form.action = 'https://formspree.io/f/' + encodeURIComponent(formspreeId);
+    form.removeAttribute('enctype');
+    form.noValidate = true;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var data = new FormData(form);
+      var field = function (k) { return String(data.get(k) || '').trim(); };
+      if (field('website')) return; // bots fill in the hidden field; people never see it
+      if (!field('name')) { setStatus('Please tell us your name.', 'error'); form.name.focus(); return; }
+      if (!field('email') && !field('phone')) { setStatus('Please give an email or a phone number, so we can reply.', 'error'); form.email.focus(); return; }
+      if (field('email') && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(field('email'))) { setStatus('That email address does not look right.', 'error'); form.email.focus(); return; }
+      if (field('phone') && field('phone').replace(/\D/g, '').length < 7) { setStatus('That phone number looks too short.', 'error'); form.phone.focus(); return; }
+      if (field('message').length < 3) { setStatus('Please write a short message.', 'error'); message.focus(); return; }
+
+      setStatus('Sending…');
+      formButton.disabled = true;
+      fetch(form.action, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          _subject: 'Website message from ' + field('name'),
+          name: field('name'),
+          email: field('email') || undefined,
+          _replyto: field('email') || undefined,
+          phone: field('phone'),
+          message: field('message'),
+          page: location.href
+        })
+      }).then(function (res) {
+        if (!res.ok) throw new Error(String(res.status));
+        var first = field('name').split(' ')[0];
+        form.reset();
+        setStatus('');
+        form.hidden = true;
+        sentPanel = document.createElement('div');
+        sentPanel.className = 'contact-sent';
+        sentPanel.setAttribute('role', 'status');
+        sentPanel.innerHTML = '<h3></h3><p>Your message has reached us, and a real person will reply soon.</p><button type="button">Send another message</button>';
+        sentPanel.querySelector('h3').textContent = 'Thank you, ' + first + '.';
+        sentPanel.querySelector('button').addEventListener('click', function () { showForm(); form.name.focus(); });
+        form.parentNode.insertBefore(sentPanel, form);
+      }).catch(function () {
+        setStatus('Sorry, that did not send. Please try again, or email hello@pathtoparivaar.org.', 'error');
+      }).then(function () {
+        formButton.disabled = false;
+      });
+    });
+  }
 
   /* ---------- Chat ---------- */
   var chat = document.getElementById('chat');
