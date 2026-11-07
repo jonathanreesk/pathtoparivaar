@@ -13,6 +13,6 @@ Static site with no build step. Open `index.html`, or deploy the folder as-is to
 ## Before going live
 
 - The canonical URL, Open Graph URLs, sitemap, and robots.txt assume `https://pathtoparivaar.org/`. Update them if the domain differs.
-- Replace `[Registration and 80G/12A details]` in the footer.
+- Add 12A and 80G registration numbers to the footer once they are issued.
 - The contact form uses `mailto:`. For reliable delivery, point it at a form service (for example Netlify Forms or Formspree).
 - After launch, submit `sitemap.xml` in Google Search Console and create a Google Business Profile for Nashik to strengthen local search.
