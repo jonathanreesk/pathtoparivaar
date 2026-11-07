@@ -125,6 +125,23 @@
     counters.forEach(function (c) { cObs.observe(c); });
   }
 
+  /* ---------- CareBase profile tabs cycle ---------- */
+  var cbTabs = document.querySelectorAll('.cb-tabs li');
+  if (cbTabs.length && !reduceMotion && 'IntersectionObserver' in window) {
+    var cbOn = 0, cbTimer = null;
+    var cbObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        clearInterval(cbTimer);
+        if (!entry.isIntersecting) return;
+        cbTimer = setInterval(function () {
+          cbTabs.forEach(function (t, i) { t.classList.toggle('is-on', i === cbOn); });
+          cbOn = (cbOn + 1) % cbTabs.length;
+        }, 1400);
+      });
+    }, { threshold: 0.3 });
+    cbObs.observe(document.querySelector('.cb-profile'));
+  }
+
   /* ---------- Card spotlight follows the pointer ---------- */
   document.querySelectorAll('.card-hover').forEach(function (card) {
     card.addEventListener('pointermove', function (e) {
