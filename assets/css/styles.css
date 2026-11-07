@@ -133,13 +133,10 @@ h1, h2, h3, p { margin: 0; }
 }
 .brand:hover { color: var(--ink); }
 .brand-name { font-family: var(--serif); font-size: 22px; font-weight: 600; letter-spacing: -0.01em; }
-.brand-mark { transition: transform .5s var(--ease-out); }
-.brand-mark .roof { stroke-dasharray: 40; stroke-dashoffset: 0; transition: stroke-dashoffset .6s var(--ease-out); }
-.brand:hover .brand-mark { transform: translateY(-2px) rotate(-4deg); }
-.brand:hover .brand-mark .roof { animation: draw-roof .8s var(--ease-out); }
-.brand-mark .hearth { transform-origin: 18px 21px; animation: hearth 3.2s ease-in-out infinite; }
-@keyframes draw-roof { from { stroke-dashoffset: 40; } to { stroke-dashoffset: 0; } }
-@keyframes hearth { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.18); } }
+.brand-mark { display: block; width: 48px; height: 48px; transition: transform .5s var(--ease-out), width .35s var(--ease), height .35s var(--ease); }
+.brand:hover .brand-mark { transform: translateY(-2px) rotate(-4deg) scale(1.04); }
+.site-header.is-scrolled .brand-mark { width: 40px; height: 40px; }
+.brand-footer .brand-mark { width: 44px; height: 44px; }
 
 .main-nav { display: flex; align-items: center; gap: 32px; font-size: 16px; font-weight: 500; }
 .nav-link { position: relative; color: var(--ink); text-decoration: none; padding: 6px 0; }
@@ -250,7 +247,7 @@ h1, h2, h3, p { margin: 0; }
 .slide-visual { position: relative; }
 .visual-card {
   position: relative; overflow: hidden; border-radius: var(--radius-lg);
-  height: clamp(420px, 62vh, 580px);
+  min-height: clamp(420px, 62vh, 580px); gap: 28px;
   display: flex; flex-direction: column; justify-content: space-between;
   padding: clamp(32px, 4vw, 56px);
   color: var(--white);
@@ -848,7 +845,7 @@ h1, h2, h3, p { margin: 0; }
 
   .hero { min-height: auto; padding-bottom: 130px; }
   .slide { grid-template-columns: 1fr; gap: 36px; }
-  .visual-card { height: 380px; }
+  .visual-card { min-height: 380px; }
   .scroll-cue { display: none; }
 
   .section-head.split { flex-direction: column; align-items: flex-start; gap: 20px; }
@@ -864,9 +861,9 @@ h1, h2, h3, p { margin: 0; }
   .brand-name { font-size: 19px; }
   .hero { padding-top: 32px; }
   .hero-ctas .btn { flex: 1 1 auto; }
-  .visual-card { height: 340px; }
+  .visual-card { min-height: 340px; }
+  .brand-mark { width: 40px; height: 40px; }
   .visual-text { font-size: 15px; }
-  .visual-card.visual-records { height: auto; min-height: 340px; gap: 28px; }
   .records { height: 170px; }
   .record { width: 230px; left: calc(var(--i) * 22px); top: calc(var(--i) * 36px); padding: 14px 16px; }
   .pathways span { font-size: 14px; padding: 9px 14px; margin-left: calc(var(--i) * 10px); }
