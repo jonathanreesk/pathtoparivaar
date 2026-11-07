@@ -271,6 +271,15 @@ h1, h2, h3, p { margin: 0; }
 }
 @keyframes drift { 0%,100% { transform: translateX(0); } 50% { transform: translateX(-24px); } }
 .deva-small { font-family: var(--deva); font-size: 30px; color: var(--gold); position: relative; }
+.card-mark {
+  position: absolute; right: -60px; top: 50%; width: clamp(240px, 24vw, 330px); height: auto; margin-top: -250px;
+  opacity: .1; pointer-events: none; animation: mark-drift 16s ease-in-out infinite;
+}
+@keyframes mark-drift { 0%,100% { transform: translate(0, 0) rotate(-4deg); } 50% { transform: translate(-22px, 12px) rotate(0deg); } }
+.card-glow {
+  position: absolute; right: -80px; top: 30%; width: 380px; height: 380px; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(circle, rgba(233,169,75,.22), transparent 65%); animation: float-b 18s ease-in-out infinite;
+}
 .word-feature { position: relative; display: flex; flex-direction: column; gap: 10px; }
 .word-deva { font-family: var(--deva); font-size: clamp(64px, 7vw, 96px); line-height: 1; color: var(--gold); }
 .word-meta { display: flex; align-items: center; gap: 12px; font-size: 15px; color: var(--teal-soft); }
@@ -941,6 +950,7 @@ abbr.term:hover, abbr.term:focus-visible, abbr.term.is-open { text-decoration-co
   .brand-mark { width: 40px; height: 40px; }
   .visual-text { font-size: 15px; }
   .records { height: 170px; }
+  .card-mark { width: 200px; right: -50px; top: auto; bottom: -30px; margin-top: 0; opacity: .07; }
   .record { width: 230px; left: calc(var(--i) * 22px); top: calc(var(--i) * 36px); padding: 14px 16px; }
   .outcomes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .journey { gap: 10px; }
