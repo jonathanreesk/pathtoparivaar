@@ -390,25 +390,93 @@
     }, reduceMotion ? 0 : 450);
   }
 
+  // With Formspree configured, the chat collects a name and a way to reply, then sends.
+  var convo = { step: 'message', message: '', name: '' };
+  var later = function (fn) { setTimeout(fn, reduceMotion ? 0 : 450); };
+  function ask(text, placeholder, type) {
+    later(function () {
+      addBubble(text);
+      input.placeholder = placeholder;
+      input.type = type || 'text';
+      input.focus({ preventScroll: true });
+    });
+  }
+  function resetConvo() {
+    convo = { step: 'message', message: '', name: '' };
+    input.placeholder = 'Type a message…';
+    input.type = 'text';
+  }
+  function gotMessage(text) {
+    convo.message = text;
+    convo.step = 'name';
+    ask('Thank you. What is your name?', 'Your name');
+  }
+  function sendConvo(contact) {
+    var isEmail = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(contact);
+    convo.step = 'sending';
+    input.disabled = true;
+    var typing = addBubble('Sending…');
+    fetch('https://formspree.io/f/' + encodeURIComponent(formspreeId), {
+      method: 'POST',
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        _subject: 'Website chat from ' + convo.name,
+        name: convo.name,
+        email: isEmail ? contact : undefined,
+        _replyto: isEmail ? contact : undefined,
+        phone: isEmail ? '' : contact,
+        message: convo.message,
+        source: 'Chat',
+        page: location.href
+      })
+    }).then(function (res) {
+      if (!res.ok) throw new Error(String(res.status));
+      typing.remove();
+      addBubble('Thank you, ' + convo.name.split(' ')[0] + '. Your message has reached us, and a real person will reply soon.');
+      resetConvo();
+    }).catch(function () {
+      typing.remove();
+      addBubble('Sorry, that did not send. You can try again, message us on WhatsApp, or email hello@pathtoparivaar.org.');
+      convo.step = 'contact';
+    }).then(function () {
+      input.disabled = false;
+    });
+  }
+
   panel.querySelectorAll('.chat-option').forEach(function (btn) {
     btn.addEventListener('click', function () {
+      if (convo.step === 'sending') return;
       var topic = btn.getAttribute('data-topic');
       addBubble(btn.textContent, true);
       if (!topic) {
-        setTimeout(function () { addBubble('Of course. Type your message below and we will take it from there.'); input.focus(); }, 350);
+        resetConvo();
+        later(function () { addBubble('Of course. Type your message below and we will take it from there.'); input.focus(); });
         return;
       }
-      handoff(topic);
+      if (formspreeId) gotMessage(topic);
+      else handoff(topic);
     });
   });
 
   compose.addEventListener('submit', function (e) {
     e.preventDefault();
     var text = input.value.trim();
-    if (!text) { input.focus(); return; }
+    if (!text || convo.step === 'sending') { input.focus(); return; }
     addBubble(text, true);
     input.value = '';
-    message.value = '';
-    handoff(text);
+    if (!formspreeId) { message.value = ''; handoff(text); return; }
+    if (convo.step === 'message') return gotMessage(text);
+    if (convo.step === 'name') {
+      convo.name = text;
+      convo.step = 'contact';
+      return ask('Thanks, ' + text.split(' ')[0] + '. What is the best email or phone number to reach you?', 'Email or phone', 'text');
+    }
+    if (convo.step === 'contact') {
+      var looksEmail = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(text);
+      if (!looksEmail && text.replace(/\D/g, '').length < 7) {
+        return ask('That does not look like an email or phone number. Could you check it?', 'Email or phone');
+      }
+      sendConvo(text);
+    }
   });
 })();

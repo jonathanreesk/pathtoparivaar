@@ -18,5 +18,5 @@ Static site with no build step. Open `index.html`, or deploy the folder as-is to
 
 - The canonical URL, Open Graph URLs, sitemap, and robots.txt assume `https://pathtoparivaar.org/`. Update them if the domain differs.
 - Add 12A and 80G registration numbers to the footer once they are issued.
-- The contact form sends through Formspree. Create a form at formspree.io that emails hello@pathtoparivaar.org, then put its id in `data-formspree` on `#contact-form` in `index.html`. While it is empty the form falls back to opening an email.
+- The contact form and the chat panel send through Formspree form `myeeanyq` (set in `data-formspree` on `#contact-form` in `index.html`). Clear that attribute and both fall back to email.
 - After launch, submit `sitemap.xml` in Google Search Console and create a Google Business Profile for Nashik to strengthen local search.
