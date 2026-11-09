@@ -572,6 +572,10 @@ h1, h2, h3, p { margin: 0; }
 }
 
 .cb-tracks { margin-top: clamp(56px, 7vw, 88px); }
+.fw-care { margin-top: clamp(56px, 7vw, 88px); }
+.care-icon { width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; background: rgba(242,201,139,.14); color: var(--gold); margin-bottom: 4px; transition: transform .5s var(--ease-out), background .3s var(--ease), color .3s var(--ease); }
+.care-icon svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.care-card:hover .care-icon { background: var(--amber); color: var(--ink); transform: rotate(-6deg); }
 .cb-row-title { font-family: var(--serif); font-size: clamp(26px, 3vw, 36px); font-weight: 500; margin-bottom: 28px; max-width: 760px; }
 .cb-track {
   padding: 28px; border-radius: var(--radius); border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.04);

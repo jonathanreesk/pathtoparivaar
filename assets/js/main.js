@@ -143,7 +143,8 @@
   var current = 0;
   var timer = null;
   var leaveTimer = null;
-  var userPaused = reduceMotion;
+  // Autoplay runs for everyone; the pause button and keyboard focus stop it.
+  var userPaused = false;
   var hoverPaused = false;
 
   hero.style.setProperty('--slide-ms', SLIDE_MS + 'ms');
@@ -221,13 +222,6 @@
   }
 
   var slidesWrap = document.getElementById('hero-slides');
-  slidesWrap.addEventListener('mouseenter', function () { hoverPaused = true; setPaused(); });
-  slidesWrap.addEventListener('mouseleave', function () {
-    hoverPaused = false;
-    var fill = dots[current].querySelector('span');
-    fill.style.animation = 'none'; void fill.offsetWidth; fill.style.animation = '';
-    setPaused();
-  });
   hero.addEventListener('focusin', function (e) {
     // pause for keyboard users only, so a mouse click on an arrow does not stop autoplay
     if (e.target.matches && e.target.matches(':focus-visible')) { hoverPaused = true; setPaused(); }
