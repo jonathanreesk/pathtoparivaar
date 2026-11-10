@@ -939,7 +939,8 @@ abbr.term:hover, abbr.term:focus-visible, abbr.term.is-open { text-decoration-co
   .main-nav .btn { margin-top: 8px; height: 52px; }
 
   .hero { padding-bottom: 130px; }
-  .slide { grid-template-columns: 1fr; gap: 36px; align-content: start; }
+  .hero-slides { position: relative; transition: height .6s var(--ease-out); }
+  .slide { grid-template-columns: 1fr; gap: 36px; align-content: start; position: absolute; top: 0; left: 0; right: 0; }
   .slide-visual > .visual-card { flex: none; width: 100%; }
   .visual-card { min-height: 380px; }
   .scroll-cue { display: none; }

@@ -187,12 +187,21 @@
       fill.style.animation = '';
     });
     current = index;
+    fitHeight();
     restart();
+  }
+
+  // On phones the slides stack, so the slider follows the height of the slide on show
+  // instead of reserving room for the tallest one.
+  var narrow = window.matchMedia('(max-width: 980px)');
+  function fitHeight() {
+    var wrap = document.getElementById('hero-slides');
+    wrap.style.height = narrow.matches ? slides[current].offsetHeight + 'px' : '';
   }
 
   function restart() {
     clearTimeout(timer);
-    if (userPaused || hoverPaused || document.hidden) return;
+    if (userPaused || hoverPaused || document.hidden || !heroInView) return;
     timer = setTimeout(function () { goTo(current + 1); }, SLIDE_MS);
   }
 
@@ -246,6 +255,18 @@
     var dy = e.changedTouches[0].clientY - sy;
     if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) goTo(current + (dx < 0 ? 1 : -1));
   }, { passive: true });
+
+  var heroInView = true;
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      heroInView = entries[0].isIntersecting;
+      if (heroInView) restart(); else clearTimeout(timer);
+    }, { threshold: 0.25 }).observe(hero);
+  }
+  fitHeight();
+  window.addEventListener('resize', fitHeight);
+  window.addEventListener('load', fitHeight);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitHeight);
 
   setPaused();
 
