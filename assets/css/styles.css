@@ -1383,3 +1383,14 @@ abbr.term:hover, abbr.term:focus-visible, abbr.term.is-open { text-decoration-co
 .section-lead strong { color: var(--ink); font-weight: 600; }
 .doc-grid-2 .doc-cover { background: #EDE6DA; }
 .doc-grid-2 .doc-cover img { object-fit: contain; object-position: center; padding: 14px 14px 44px; }
+
+/* Tighter top on inner pages */
+main.page-inner > section:first-child { padding-top: clamp(28px, 4vw, 52px); }
+.res-sub { margin-top: clamp(48px, 6vw, 72px); }
+.helplines { margin-bottom: 0; }
+.pap-strip { margin-top: 28px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 28px; padding: 20px 26px; border-radius: var(--radius); background: var(--teal); color: var(--white); }
+.pap-strip p { font-size: 16px; line-height: 1.6; color: var(--teal-soft); max-width: 760px; }
+.pap-strip b { color: var(--white); font-family: var(--serif); font-size: 19px; font-weight: 500; margin-right: 4px; }
+.pap-strip a:not(.btn) { color: var(--gold); font-weight: 600; }
+.pap-strip-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+.pap-strip .link-arrow { margin-top: 0; }
