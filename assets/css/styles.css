@@ -1057,6 +1057,18 @@ abbr.term:hover, abbr.term:focus-visible, abbr.term.is-open { text-decoration-co
   .oc-goal b { font-size: clamp(15px, 2vh, 18px); }
   .oc-goal span { font-size: clamp(16px, 2.3vh, 20px); }
   .hero-controls { bottom: clamp(14px, 2.6vh, 36px); }
+  /* Slide 1 has the least text, so it takes a larger scale to use the space well */
+  .slide[data-theme="teal"] .slide-copy { gap: clamp(16px, 3.4vh, 36px); }
+  .slide[data-theme="teal"] .eyebrow { font-size: clamp(14px, 1.9vh, 17px); }
+  .slide[data-theme="teal"] .hero-title { font-size: clamp(40px, min(6.4vw, 10.5vh), 112px); line-height: 1; }
+  .slide[data-theme="teal"] .hero-lead { font-size: clamp(16px, min(1.7vw, 2.75vh), 25px); max-width: 640px; }
+  .slide[data-theme="teal"] .hero-ctas .btn { height: clamp(50px, 7.4vh, 66px); padding: 0 clamp(26px, 2.4vw, 38px); font-size: clamp(16px, 2.1vh, 19px); }
+  .visual-welcome { gap: clamp(22px, 5vh, 56px); }
+  .visual-welcome .medallion { width: clamp(100px, min(11vw, 18vh), 180px); }
+  .visual-welcome .word-deva { font-size: clamp(48px, min(7.4vw, 11.5vh), 124px); }
+  .visual-welcome .word-meta { font-size: clamp(13px, 2vh, 17px); }
+  .visual-welcome .visual-quote { font-size: clamp(22px, min(2.9vw, 4.6vh), 48px); }
+  .visual-welcome .visual-text { font-size: clamp(14px, 2.2vh, 19px); }
   .scroll-cue { bottom: clamp(20px, 3vh, 44px); }
 }
 
