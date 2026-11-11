@@ -5,6 +5,9 @@
   doc.classList.add('js');
 
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // The home page has the hero slider and contact form; other pages (framework.html) do not.
+  var isHome = !!document.getElementById('hero-slides');
+  var goToSlide = function () {};
 
   function scrollToTop() {
     window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
@@ -43,10 +46,11 @@
   /* ---------- Logo returns to the top of the home page ---------- */
   document.querySelectorAll('#brand, [data-to-top]').forEach(function (el) {
     el.addEventListener('click', function (e) {
+      if (!isHome) return; // on other pages the logo links home
       e.preventDefault();
       closeMenu();
       scrollToTop();
-      goTo(0);
+      goToSlide(0);
     });
   });
 
@@ -71,7 +75,10 @@
 
   /* ---------- Active nav link ---------- */
   var links = Array.prototype.slice.call(document.querySelectorAll('.nav-link'));
-  var sections = links.map(function (l) { return document.querySelector(l.getAttribute('href')); }).filter(Boolean);
+  var sections = links.map(function (l) {
+    var h = l.getAttribute('href');
+    return h.charAt(0) === '#' ? document.querySelector(h) : null;
+  }).filter(Boolean);
   if ('IntersectionObserver' in window) {
     var navObs = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -82,6 +89,39 @@
       });
     }, { rootMargin: '-45% 0px -50% 0px' });
     sections.forEach(function (s) { navObs.observe(s); });
+  }
+
+  /* ---------- Chapter rail: where you are, what is next ---------- */
+  var chapters = Array.prototype.slice.call(document.querySelectorAll('main > section[data-chapter][id]'));
+  if (chapters.length > 2 && 'IntersectionObserver' in window) {
+    var rail = document.createElement('nav');
+    rail.className = 'rail';
+    rail.setAttribute('aria-label', 'Sections on this page');
+    var dotsR = chapters.map(function (sec) {
+      var a = document.createElement('a');
+      a.href = '#' + sec.id;
+      a.innerHTML = '<span></span>';
+      a.querySelector('span').textContent = sec.getAttribute('data-chapter');
+      a.setAttribute('aria-label', sec.getAttribute('data-chapter'));
+      rail.appendChild(a);
+      return a;
+    });
+    document.body.appendChild(rail);
+    var railObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var idx = chapters.indexOf(entry.target);
+        dotsR.forEach(function (d, i) {
+          d.classList.toggle('is-active', i === idx);
+          d.classList.toggle('is-done', i < idx);
+          if (i === idx) d.setAttribute('aria-current', 'true'); else d.removeAttribute('aria-current');
+        });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    chapters.forEach(function (c) { railObs.observe(c); });
+    window.addEventListener('scroll', function () {
+      rail.classList.toggle('is-on', window.scrollY > window.innerHeight * 0.5);
+    }, { passive: true });
   }
 
   /* ---------- Scroll reveal ---------- */
@@ -134,7 +174,8 @@
     });
   });
 
-  /* ---------- Hero slider ---------- */
+  /* ---------- Hero slider (home page only) ---------- */
+  if (isHome) (function () {
   var hero = document.getElementById('top');
   var slides = Array.prototype.slice.call(document.querySelectorAll('#hero-slides .slide'));
   var dots = Array.prototype.slice.call(document.querySelectorAll('#hero-dots .dot'));
@@ -269,10 +310,13 @@
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitHeight);
 
   setPaused();
+  goToSlide = goTo;
+  })();
 
   /* ---------- Contact prefill ---------- */
   var message = document.getElementById('contact-message');
   function prefillContact(text) {
+    if (!form) { location.href = 'index.html#contact'; return; }
     showForm();
     if (text && !message.value.trim()) message.value = text;
     document.getElementById('contact').scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
@@ -284,6 +328,7 @@
   }
   document.querySelectorAll('a[data-topic]').forEach(function (a) {
     a.addEventListener('click', function (e) {
+      if (!form) return; // other pages follow the link to the home page contact form
       e.preventDefault();
       prefillContact(a.getAttribute('data-topic'));
     });
@@ -293,7 +338,7 @@
   var form = document.getElementById('contact-form');
   var formStatus = document.getElementById('contact-status');
   var formButton = document.getElementById('contact-submit');
-  var formspreeId = (form.getAttribute('data-formspree') || '').trim();
+  var formspreeId = (document.body.getAttribute('data-formspree') || (form && form.getAttribute('data-formspree')) || '').trim();
   var sentPanel = null;
 
   function setStatus(text, kind) {
@@ -302,11 +347,12 @@
   }
 
   function showForm() {
+    if (!form) return;
     if (sentPanel) { sentPanel.remove(); sentPanel = null; }
     form.hidden = false;
   }
 
-  if (formspreeId) {
+  if (form && formspreeId) {
     form.action = 'https://formspree.io/f/' + encodeURIComponent(formspreeId);
     form.removeAttribute('enctype');
     form.noValidate = true;
@@ -529,7 +575,7 @@
     if (!text || convo.step === 'sending') { input.focus(); return; }
     addBubble(text, true);
     input.value = '';
-    if (!formspreeId) { message.value = ''; handoff(text); return; }
+    if (!formspreeId) { if (message) message.value = ''; handoff(text); return; }
     if (convo.step === 'message') return gotMessage(text);
     if (convo.step === 'name') {
       convo.name = text;

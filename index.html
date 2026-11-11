@@ -117,18 +117,8 @@
         },
         {
           "@type": "Question",
-          "name": "Who do you work with?",
-          "acceptedAnswer": { "@type": "Answer", "text": "We work with government bodies and NGOs caring for children: Child Care Institutions (CCIs), Specialised Adoption Agencies, child welfare authorities, and foster-care organisations. We help them build documentation frameworks under CARA guidelines, and we support adoptive, foster, and kinship families. We are starting in Nashik, and our hope is to walk alongside its institutions, adoption agencies and child welfare authorities." }
-        },
-        {
-          "@type": "Question",
           "name": "Is Path to Parivaar a registered organisation?",
           "acceptedAnswer": { "@type": "Answer", "text": "Yes. Path to Parivaar Foundation is a not-for-profit company registered under Section 8 of the Companies Act, 2013, incorporated on 17 October 2026 (CIN U88100MR2026NPL481887). We are also registered on NITI Aayog's NGO Darpan portal (Darpan ID MH/2026/1256345)." }
-        },
-        {
-          "@type": "Question",
-          "name": "How can I get involved?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Institutions can partner with us to support their staff and children, families can find preparation and support, and professionals, volunteers, and funders can help more children move from institutions to families. Write to hello@pathtoparivaar.org, or call or WhatsApp +91 80877 60630." }
         }
       ]
     }
@@ -136,7 +126,7 @@
 }
 </script>
 </head>
-<body>
+<body data-formspree="myeeanyq">
 <a class="skip-link" href="#main">Skip to content</a>
 
 <!-- NAV -->
@@ -147,12 +137,11 @@
       <span class="brand-name">Path to Parivaar</span>
     </a>
     <nav aria-label="Main" class="main-nav" id="main-nav">
-      <a href="#nashik" class="nav-link">Nashik</a>
-      <a href="#work" class="nav-link">Our Work</a>
-      <a href="#framework" class="nav-link">Framework</a>
-      <a href="#path" class="nav-link">The Path</a>
-      <a href="#about" class="nav-link">About</a>
-      <a href="#involved" class="nav-link">Get Involved</a>
+      <a href="#involved" class="nav-link">How to help</a>
+      <a href="#work" class="nav-link">What we do</a>
+      <a href="framework.html" class="nav-link">Framework</a>
+      <a href="#team" class="nav-link">Who we are</a>
+      <a href="#faq" class="nav-link">FAQ</a>
       <a href="#contact" class="btn btn-primary btn-sm">Partner with us</a>
     </nav>
     <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
@@ -165,7 +154,7 @@
 <main id="main">
 
 <!-- HERO SLIDER -->
-<section id="top" class="hero" aria-roledescription="carousel" aria-label="Highlights">
+<section id="top" class="hero" aria-roledescription="carousel" aria-label="Highlights" data-chapter="Welcome">
   <div class="hero-bg" aria-hidden="true">
     <span class="blob blob-a"></span>
     <span class="blob blob-b"></span>
@@ -174,14 +163,14 @@
   <div class="hero-slides" id="hero-slides" aria-live="polite">
 
     <!-- Slide 1 -->
-    <div class="slide is-active" role="group" aria-roledescription="slide" aria-label="1 of 4" data-theme="teal">
+    <div class="slide is-active" role="group" aria-roledescription="slide" aria-label="1 of 3" data-theme="teal">
       <div class="slide-copy">
         <p class="eyebrow anim">Family-based care for children in India</p>
         <h1 class="hero-title anim">Every child deserves a <em>family.</em></h1>
         <p class="hero-lead anim">We help government bodies and <abbr class="term" tabindex="0" data-tip="Non-governmental organisation: A not-for-profit organisation that works independently of government.">NGOs</abbr> caring for children build documentation frameworks under <abbr class="term" tabindex="0" data-tip="Central Adoption Resource Authority: The Government of India body, under the Ministry of Women and Child Development, that regulates adoption in India.">CARA</abbr> guidelines, and follow each child's case, care and wellbeing, so every child's story is known, their path is clear, and no child waits for a family because the paperwork was never finished.</p>
         <div class="hero-ctas anim">
-          <a href="#work" class="btn btn-primary">See our work</a>
-          <a href="#about" class="btn btn-ghost">Why we exist</a>
+          <a href="#involved" class="btn btn-primary">Find your part</a>
+          <a href="#work" class="btn btn-ghost">What we do</a>
         </div>
       </div>
       <div class="slide-visual">
@@ -200,15 +189,35 @@
       </div>
     </div>
 
-    <!-- Slide 2: Nashik -->
-    <div class="slide" role="group" aria-roledescription="slide" aria-label="2 of 4" aria-hidden="true" data-theme="ink">
+    <!-- Slide 2: The right path -->
+    <div class="slide" role="group" aria-roledescription="slide" aria-label="2 of 3" aria-hidden="true" data-theme="amber">
+      <div class="slide-copy">
+        <p class="eyebrow anim">The right path for every child</p>
+        <h2 class="hero-title anim">Not every child's path leads to <em>adoption.</em></h2>
+        <p class="hero-lead anim">When a child is placed in a children's home, their story is gathered first. The authorities then decide what is safest and best for that child: going home, living with relatives, <abbr class="term" tabindex="0" data-tip="A family looks after a child in their own home for a time, while longer-term plans are made.">foster care</abbr> or adoption. We help make sure every step is ready, and that children, caregivers and families are prepared.</p>
+        <div class="hero-ctas anim">
+          <a href="#involved" class="btn btn-primary">Find your part</a>
+          <a href="framework.html#path" class="btn btn-ghost">See the full path</a>
+        </div>
+      </div>
+      <div class="slide-visual">
+        <div class="visual-card visual-amber visual-journey">
+          <p class="jn-label">How a child's path is decided</p>
+          <ol class="journey"><li style="--i:0"><span class="jn-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg></span><b>Enters a children's home</b><small>often with little or no paperwork</small></li><li style="--i:1"><span class="jn-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/></svg></span><b>Story gathered</b><small>identity, family history and records</small></li><li style="--i:2"><span class="jn-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16M7 20h10M5 8h14"/><path d="M5 8l-2.5 6a3 3 0 005 0zM19 8l-2.5 6a3 3 0 005 0z"/></svg></span><b>Decision made</b><small>by the <abbr class="term" tabindex="0" data-tip="Child Welfare Committee: The district body that decides on the care, protection and rehabilitation of children in need of care. Decisions about a child rest with it.">Child Welfare Committee</abbr>, in the child's best interest</small></li></ol>
+          <p class="jn-label">Then, the right path for this child</p>
+          <ul class="outcomes"><li style="--i:0"><span class="oc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg></span><b>Return home</b><small>to their birth family, when it is safe</small></li><li style="--i:1"><span class="oc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 20c0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5M14 20c.3-2.5 1.7-4.2 3.5-4.2 2.2 0 3.5 1.8 3.5 4.2"/></svg></span><b><abbr class="term" tabindex="0" data-tip="Care of a child by grandparents, other relatives or close family friends.">Kinship care</abbr></b><small>with grandparents or other relatives</small></li><li style="--i:2"><span class="oc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span><b>Foster care</b><small>a family's care for a time</small></li><li style="--i:3"><span class="oc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="6" r="2.5"/><circle cx="17" cy="6" r="2.5"/><circle cx="12" cy="12" r="2"/><path d="M3 21v-5a4 4 0 018 0M13 21v-5a4 4 0 018 0M9.5 21v-2a2.5 2.5 0 015 0v2"/></svg></span><b>Adoption</b><small>a new, permanent family</small></li><li style="--i:4"><span class="oc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></span><b>Other permanent care</b><small>a legal, lasting arrangement</small></li><li class="oc-goal" style="--i:5"><b>One goal:</b><span>a place to belong.</span></li></ul>
+        </div>
+      </div>
+    </div>
+    <!-- Slide 3: Nashik -->
+    <div class="slide" role="group" aria-roledescription="slide" aria-label="3 of 3" aria-hidden="true" data-theme="ink">
       <div class="slide-copy">
         <p class="eyebrow anim">Rooted in Nashik, Maharashtra</p>
         <h2 class="hero-title anim">Local work, <em>close to every child.</em></h2>
         <p class="hero-lead anim">Our work in Nashik begins with the institutions, agencies, and families already caring for its children, so that every child in their care is known by name, not by file number.</p>
         <div class="hero-ctas anim">
-          <a href="#nashik" class="btn btn-primary">How we work in Nashik</a>
-          <a href="#contact" class="btn btn-ghost">Partner with us</a>
+          <a href="#contact" class="btn btn-primary" data-topic="I represent an institution or agency in Nashik and would like to start a partnership.">Partner with us in Nashik</a>
+          <a href="#team" class="btn btn-ghost">Who we are</a>
         </div>
       </div>
       <div class="slide-visual">
@@ -237,62 +246,14 @@
       </div>
     </div>
 
-    <!-- Slide 3: Story -->
-    <div class="slide" role="group" aria-roledescription="slide" aria-label="3 of 4" aria-hidden="true" data-theme="sand">
-      <div class="slide-copy">
-        <p class="eyebrow anim">Know the child</p>
-        <h2 class="hero-title anim">Every child's story <em>deserves to be known.</em></h2>
-        <p class="hero-lead anim">Many children arrive at a children's home with fragmented or undocumented histories. We help preserve their stories, identities, and the people who matter to them.</p>
-        <div class="hero-ctas anim">
-          <a href="#path" class="btn btn-primary">Walk the path</a>
-          <a href="#work" class="btn btn-ghost">Our initiatives</a>
-        </div>
-      </div>
-      <div class="slide-visual">
-        <div class="visual-card visual-ink visual-records">
-          <div class="records" aria-hidden="true">
-            <div class="record" style="--i:0"><span class="record-tag">Identity</span><i></i><i></i><i class="short"></i></div>
-            <div class="record" style="--i:1"><span class="record-tag">Family history</span><i></i><i></i><i class="short"></i></div>
-            <div class="record" style="--i:2"><span class="record-tag">Case record</span><i></i><i></i><i class="short"></i></div>
-          </div>
-          <div class="visual-body">
-            <div class="deva-small"><abbr class="term" tabindex="0" data-tip="Hindi for story.">कहानी</abbr></div>
-            <p class="visual-quote">Every child has a right to know their story.</p>
-            <p class="visual-text">Shared only through authorized processes, with care for the child and respect for birth families.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Slide 4: The right path -->
-    <div class="slide" role="group" aria-roledescription="slide" aria-label="4 of 4" aria-hidden="true" data-theme="amber">
-      <div class="slide-copy">
-        <p class="eyebrow anim">The right path for every child</p>
-        <h2 class="hero-title anim">Not every child's path leads to <em>adoption.</em></h2>
-        <p class="hero-lead anim">When a child is placed in a children's home, their story is gathered first. The authorities then decide what is safest and best for that child: going home, living with relatives, <abbr class="term" tabindex="0" data-tip="A family looks after a child in their own home for a time, while longer-term plans are made.">foster care</abbr> or adoption. We help make sure every step is ready, and that children, caregivers and families are prepared.</p>
-        <div class="hero-ctas anim">
-          <a href="#path" class="btn btn-primary">See how the path works</a>
-          <a href="#involved" class="btn btn-ghost">Get involved</a>
-        </div>
-      </div>
-      <div class="slide-visual">
-        <div class="visual-card visual-amber visual-journey">
-          <p class="jn-label">How a child's path is decided</p>
-          <ol class="journey"><li style="--i:0"><span class="jn-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg></span><b>Enters a children's home</b><small>often with little or no paperwork</small></li><li style="--i:1"><span class="jn-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/></svg></span><b>Story gathered</b><small>identity, family history and records</small></li><li style="--i:2"><span class="jn-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16M7 20h10M5 8h14"/><path d="M5 8l-2.5 6a3 3 0 005 0zM19 8l-2.5 6a3 3 0 005 0z"/></svg></span><b>Decision made</b><small>by the <abbr class="term" tabindex="0" data-tip="Child Welfare Committee: The district body that decides on the care, protection and rehabilitation of children in need of care. Decisions about a child rest with it.">Child Welfare Committee</abbr>, in the child's best interest</small></li></ol>
-          <p class="jn-label">Then, the right path for this child</p>
-          <ul class="outcomes"><li style="--i:0"><span class="oc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg></span><b>Return home</b><small>to their birth family, when it is safe</small></li><li style="--i:1"><span class="oc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 20c0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5M14 20c.3-2.5 1.7-4.2 3.5-4.2 2.2 0 3.5 1.8 3.5 4.2"/></svg></span><b><abbr class="term" tabindex="0" data-tip="Care of a child by grandparents, other relatives or close family friends.">Kinship care</abbr></b><small>with grandparents or other relatives</small></li><li style="--i:2"><span class="oc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span><b>Foster care</b><small>a family's care for a time</small></li><li style="--i:3"><span class="oc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="6" r="2.5"/><circle cx="17" cy="6" r="2.5"/><circle cx="12" cy="12" r="2"/><path d="M3 21v-5a4 4 0 018 0M13 21v-5a4 4 0 018 0M9.5 21v-2a2.5 2.5 0 015 0v2"/></svg></span><b>Adoption</b><small>a new, permanent family</small></li><li style="--i:4"><span class="oc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></span><b>Other permanent care</b><small>a legal, lasting arrangement</small></li><li class="oc-goal" style="--i:5"><b>One goal:</b><span>a place to belong.</span></li></ul>
-        </div>
-      </div>
-    </div>
   </div>
 
   <div class="hero-controls">
     <button class="hero-arrow" id="hero-prev" aria-label="Previous slide"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
     <div class="hero-dots" id="hero-dots" role="tablist" aria-label="Choose slide">
       <button role="tab" aria-selected="true" aria-label="Slide 1: Every child deserves a family" class="dot is-active"><span></span></button>
-      <button role="tab" aria-selected="false" aria-label="Slide 2: Rooted in Nashik" class="dot"><span></span></button>
-      <button role="tab" aria-selected="false" aria-label="Slide 3: Every child's story" class="dot"><span></span></button>
-      <button role="tab" aria-selected="false" aria-label="Slide 4: The right path for every child" class="dot"><span></span></button>
+      <button role="tab" aria-selected="false" aria-label="Slide 2: The right path for every child" class="dot"><span></span></button>
+      <button role="tab" aria-selected="false" aria-label="Slide 3: Rooted in Nashik" class="dot"><span></span></button>
     </div>
     <button class="hero-arrow" id="hero-next" aria-label="Next slide"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
     <button class="hero-pause" id="hero-pause" aria-label="Pause slideshow" aria-pressed="false">
@@ -300,288 +261,137 @@
       <svg class="i-play" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M8 5l11 7-11 7z" fill="currentColor"/></svg>
     </button>
   </div>
-  <a href="#pillars" class="scroll-cue" aria-label="Scroll to content"><span></span></a>
+  <a href="#involved" class="scroll-cue" aria-label="Scroll to content"><span></span></a>
 </section>
 
-<!-- BELIEF STRIP -->
-<section id="pillars" class="section section-sand">
-  <div class="container grid-3">
-    <article class="pillar reveal">
-      <div class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 012-2h9l5 5v11a2 2 0 01-2 2H6a2 2 0 01-2-2z"/><path d="M14 3v5h5M8 13h8M8 17h5"/></svg></div>
-      <h2 class="pillar-title">Know the child</h2>
-      <p>Many children arrive at a children's home with fragmented or undocumented histories. We help preserve their stories, identities, and the people who matter to them.</p>
-    </article>
-    <article class="pillar reveal" style="--d:1">
-      <div class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12h13M12 6l6 6-6 6"/><path d="M21 4v16"/></svg></div>
-      <h2 class="pillar-title">Clear the way</h2>
-      <p>A child can be ready for a family and still wait for years without one. We work with authorities and institutions to resolve documentation and legal barriers.</p>
-    </article>
-    <article class="pillar reveal" style="--d:2">
-      <div class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 5.5-7 10-7 10z"/></svg></div>
-      <h2 class="pillar-title">Prepare everyone</h2>
-      <p>Children, caregivers, and families all need preparation. We equip them before, during, and long after a child comes home.</p>
-    </article>
-  </div>
-</section>
-
-<!-- NASHIK -->
-<section id="nashik" class="section nashik">
+<!-- FIND YOUR PART -->
+<section id="involved" class="section help" data-chapter="Find your part">
   <div class="container">
     <div class="section-head split">
       <div class="reveal">
-        <p class="eyebrow">Where we work</p>
-        <h2 class="section-title">Based in Nashik. Rooted in the community.</h2>
+        <p class="eyebrow">Find your part</p>
+        <h2 class="section-title">How you can help a child grow up with a family.</h2>
       </div>
-      <p class="section-lead reveal" style="--d:1">Our work in Nashik, Maharashtra, starts with the people already caring for children: caseworkers, caregivers, institutions and authorities. Working side by side with them, in person and for the long term, is how each child gets the attention they need.</p>
+      <p class="section-lead reveal" style="--d:1">Choose what fits you. Each one starts with a simple conversation, and we will take it from there.</p>
     </div>
-
-    <div class="nashik-grid">
-      <article class="nashik-feature reveal">
-        <div class="nashik-feature-bg" aria-hidden="true">नाशिक</div>
-        <div class="nashik-feature-body">
-          <span class="chip chip-light"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 21s-6-5.6-6-11a6 6 0 0112 0c0 5.4-6 11-6 11z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.2" fill="currentColor"/></svg>Nashik, Maharashtra, India</span>
-          <h3>Together with the people caring for Nashik's children.</h3>
-          <p>Our hope is to walk alongside Nashik's child care institutions, adoption agencies and child welfare authorities. We want to work with statutory bodies, never around them: every decision about a child stays with the authorities responsible for it, and every partner agrees our role before work begins.</p>
+    <div class="grid-3 help-grid">
+      <article class="card card-hover help-card reveal">
+        <div class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V9l7-5 7 5v12"/><path d="M9 21v-6h6v6"/></svg></div>
+        <p class="help-who">Institutions and authorities</p>
+        <h3 class="card-title">Bring clarity to every child's case.</h3>
+        <p>For <abbr class="term" tabindex="0" data-tip="Child Care Institution: A children&#x27;s home or shelter registered under the Juvenile Justice Act to care for children who need care and protection.">CCIs</abbr>, <abbr class="term" tabindex="0" data-tip="Specialised Adoption Agency: An institution recognised to care for children who are orphaned, abandoned or surrendered, and to place them for adoption.">Specialised Adoption Agencies</abbr>, child welfare offices and <abbr class="term" tabindex="0" data-tip="Non-governmental organisation: A not-for-profit organisation that works independently of government.">NGOs</abbr>. We sit with your team, map how records and case follow-up work today, and agree a clear, <abbr class="term" tabindex="0" data-tip="Central Adoption Resource Authority: The Government of India body, under the Ministry of Women and Child Development, that regulates adoption in India.">CARA</abbr>-aligned way forward that your staff keep going.</p>
+        <div class="help-actions">
+          <a href="#contact" class="btn btn-primary btn-sm" data-topic="I represent an institution or agency and would like to start a partnership.">Start a partnership</a>
+          <a href="framework.html" class="link-arrow">See the framework <span aria-hidden="true">→</span></a>
         </div>
       </article>
-
-      <article class="card card-hover reveal" style="--d:1">
-        <div class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg></div>
-        <h3 class="card-title">Finding where stories get lost</h3>
-        <p>We want to understand, with each partner, where a child's information slips through the cracks: between admission, case decisions, placement and follow-up.</p>
+      <article class="card card-hover help-card reveal" style="--d:1">
+        <div class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 5.5-7 10-7 10z"/></svg></div>
+        <p class="help-who">Families and caregivers</p>
+        <h3 class="card-title">Get ready to welcome a child.</h3>
+        <p>Adopting, fostering, or caring for a relative's child? We help you prepare before a child arrives, and we stay alongside you after they come home.</p>
+        <div class="help-actions">
+          <a href="#contact" class="btn btn-primary btn-sm" data-topic="We are a family or caregiver looking for preparation and support.">Talk to us</a>
+        </div>
       </article>
-
-      <article class="card card-hover reveal" style="--d:2">
-        <div class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 012-2h9l5 5v11a2 2 0 01-2 2H6a2 2 0 01-2-2z"/><path d="M14 3v5h5M8 13h8M8 17h5"/></svg></div>
-        <h3 class="card-title">Records that follow the child</h3>
-        <p>We want every handover to be clear: who is responsible at each step and which documents move with the child, shaped with the staff who do the work every day.</p>
-      </article>
-
-      <article class="card card-hover reveal" style="--d:3">
-        <div class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg></div>
-        <h3 class="card-title">Helping adoptees find their story</h3>
-        <p>One day, an adopted child may come back asking where they came from. We want their records to be there, ready to share through the authorized <abbr class="term" tabindex="0" data-tip="The process by which an adopted person can seek information about their origins and birth family, under CARA&#x27;s rules.">root search</abbr> process under <abbr class="term" tabindex="0" data-tip="Central Adoption Resource Authority: The Government of India body, under the Ministry of Women and Child Development, that regulates adoption in India.">CARA</abbr> guidelines.</p>
-      </article>
-
-      <article class="card card-hover reveal" style="--d:4">
-        <div class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div>
-        <h3 class="card-title">What we hope to grow into</h3>
-        <p>Supporting children as they return home, preparing families before a child arrives, and working closely with the district's child protection authorities.</p>
+      <article class="card card-hover help-card reveal" style="--d:2">
+        <div class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 11V7a2 2 0 014 0v4"/><path d="M11 9V5a2 2 0 014 0v6"/><path d="M15 9a2 2 0 014 0v4a7 7 0 01-7 7h-1a6 6 0 01-5-2.7L3 13.5a1.8 1.8 0 013-2L7 13"/></svg></div>
+        <p class="help-who">Supporters, volunteers and funders</p>
+        <h3 class="card-title">Help more children grow up with a family.</h3>
+        <p>Professionals can give their time and skills. Funders, companies and friends can help this work reach more children, so more of them grow up with a family.</p>
+        <div class="help-actions">
+          <a href="#contact" class="btn btn-primary btn-sm" data-topic="I would like to support the work of Path to Parivaar.">Support the work</a>
+        </div>
       </article>
     </div>
+    <p class="help-alt reveal">Prefer to talk now? <a href="https://wa.me/918087760630" target="_blank" rel="noopener">WhatsApp us</a> or call <a href="tel:+918087760630">+91 80877 60630</a>.</p>
+  </div>
+  <div class="next-up reveal">
+    <p class="next-q">Wondering why children wait at all?</p>
+    <a class="next-link" href="#work"><span>Next: What we do</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
   </div>
 </section>
 
-<!-- INITIATIVES -->
-<section id="work" class="section">
+<!-- WHAT WE DO -->
+<section id="work" class="section section-sand" data-chapter="What we do">
   <div class="container">
     <div class="section-head split">
       <div class="reveal">
-        <p class="eyebrow">Our Work</p>
-        <h2 class="section-title">Five initiatives, one goal: a place to belong.</h2>
+        <p class="eyebrow">What we do</p>
+        <h2 class="section-title">A child can be ready for a family and still wait for years without one.</h2>
       </div>
-      <p class="section-lead reveal" style="--d:1">Each initiative removes one barrier between a child and a family, working alongside the people and systems already caring for children.</p>
+      <p class="section-lead reveal" style="--d:1">Usually not because no one cares, but because a story was never written down, paperwork was never finished, or no family was prepared. We work on all three, alongside the people already caring for children.</p>
     </div>
     <div class="grid-3 work-grid">
       <article class="card card-hover work-card reveal">
         <span class="card-num">01</span>
-        <h3 class="card-title">Know Their Story</h3>
-        <p>Preserving each child's social and family history, identity records, siblings, cultural background, and the memories they share, so every child can understand who they are and where they came from.</p>
+        <h3 class="card-title">Know the child</h3>
+        <p>We help preserve each child's story: family history, identity records, siblings and the people who matter to them, while keeping their care and wellbeing in view.</p>
       </article>
       <article class="card card-hover work-card reveal" style="--d:1">
         <span class="card-num">02</span>
-        <h3 class="card-title">Prepare for Family</h3>
-        <p>Helping children, <abbr class="term" tabindex="0" data-tip="Child Care Institution: A children&#x27;s home or shelter registered under the Juvenile Justice Act to care for children who need care and protection.">CCI</abbr> staff, and caregivers understand foster care, kinship care, adoption, reunification, healthy attachment, and the move from institutional to family life.</p>
+        <h3 class="card-title">Clear the way</h3>
+        <p>We help institutions put clear documentation in place under <abbr class="term" tabindex="0" data-tip="Central Adoption Resource Authority: The Government of India body, under the Ministry of Women and Child Development, that regulates adoption in India.">CARA</abbr> guidelines and keep every case moving, so no child waits because a file went quiet.</p>
+        <a href="framework.html" class="link-arrow">See the framework <span aria-hidden="true">→</span></a>
       </article>
       <article class="card card-hover work-card reveal" style="--d:2">
         <span class="card-num">03</span>
-        <h3 class="card-title">Trauma and Transition</h3>
-        <p>Trauma-informed training for the adults around a child, because difficult behavior may be communication, and children need relationships, consistency, patience, and safety.</p>
+        <h3 class="card-title">Prepare everyone</h3>
+        <p>Trauma-informed preparation for children, caregivers and families, before a child moves and long after they are home.</p>
       </article>
-      <article class="card card-hover work-card reveal">
-        <span class="card-num">04</span>
-        <h3 class="card-title">Legal Identity and Permanency</h3>
-        <p>Supporting identity documentation, family tracing, case records, and legal-status resolution, so no child stays in an institution because paperwork was never finished.</p>
-      </article>
-      <article class="card card-hover work-card reveal" style="--d:1">
-        <span class="card-num">05</span>
-        <h3 class="card-title">Prepare the Family</h3>
-        <p>Preparing adoptive, foster, and kinship families for the child, not just the child for the family, with education before placement and support long after.</p>
-      </article>
-      <div class="card card-dark reveal" style="--d:2">
-        <p class="card-dark-quote">We do not assume adoption is right for every child. The goal is appropriate permanency for each one.</p>
-        <a href="#path" class="link-arrow">See how the path works <span aria-hidden="true">→</span></a>
-      </div>
     </div>
+  </div>
+  <div class="next-up reveal">
+    <p class="next-q">Curious how clear records actually work?</p>
+    <a class="next-link" href="#framework"><span>Next: The framework</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
   </div>
 </section>
 
-<!-- DOCUMENTATION FRAMEWORK -->
-<section id="framework" class="section section-ink carebase">
+<!-- FRAMEWORK TEASER -->
+<section id="framework" class="section section-ink carebase" data-chapter="The framework">
   <div class="container">
     <div class="section-head split">
       <div class="reveal">
-        <p class="eyebrow eyebrow-gold">Documentation framework</p>
-        <h2 class="section-title">A clear documentation framework, aligned with <abbr class="term" tabindex="0" data-tip="Central Adoption Resource Authority: The Government of India body, under the Ministry of Women and Child Development, that regulates adoption in India.">CARA</abbr> guidelines.</h2>
+        <p class="eyebrow eyebrow-gold">For institutions and authorities</p>
+        <h2 class="section-title">Our documentation framework, in detail.</h2>
       </div>
-      <p class="section-lead cb-lead reveal" style="--d:1">We help government bodies and <abbr class="term" tabindex="0" data-tip="Non-governmental organisation: A not-for-profit organisation that works independently of government.">NGOs</abbr> caring for children agree how each child's records are created, kept and passed on. Every stage of a child's journey has its documents, a person responsible, and a record that moves with the child. We bring the strategy and focus; the people caring for children own the records day to day. And because a file is never the whole child, we keep the child's care and wellbeing in view at every step.</p>
+      <p class="section-lead cb-lead reveal" style="--d:1">A blueprint for what is recorded at each stage of a child's journey under <abbr class="term" tabindex="0" data-tip="Central Adoption Resource Authority: The Government of India body, under the Ministry of Women and Child Development, that regulates adoption in India.">CARA</abbr> guidelines, how cases are followed up, and how we work alongside your team.</p>
     </div>
-
     <ol class="fw-phases">
-      <li class="fw-phase reveal">
+      <li class="fw-phase fw-mini reveal" style="--d:0">
         <span class="fw-num">01</span>
         <h3>On admission</h3>
         <p>The first record sets the foundation for every decision that follows.</p>
-        <ul class="fw-docs"><li>Date and circumstances of admission</li><li>Who brought the child</li><li>Police station, district and <abbr class="term" tabindex="0" data-tip="A sub-division of a district in Maharashtra and other states, made up of a town and its nearby villages.">taluka</abbr></li><li>Health at admission</li><li>Family and social background</li></ul>
       </li>
-      <li class="fw-phase reveal" style="--d:1">
+      <li class="fw-phase fw-mini reveal" style="--d:1">
         <span class="fw-num">02</span>
         <h3>Clearing the way</h3>
         <p>The legal and medical steps that decide whether a child can be placed in a family.</p>
-        <ul class="fw-docs"><li><abbr class="term" tabindex="0" data-tip="Publishing an abandoned child&#x27;s details, such as in newspapers, so their family can come forward before the child is declared free for adoption.">Media declaration</abbr></li><li><abbr class="term" tabindex="0" data-tip="A declaration by the Child Welfare Committee that a child can be placed for adoption.">Legally free for adoption</abbr> declaration</li><li>Medical examination report</li><li><abbr class="term" tabindex="0" data-tip="A report on a child&#x27;s background, health and needs, prepared by the adoption agency to help find the right family.">Child study report</abbr></li></ul>
       </li>
-      <li class="fw-phase reveal" style="--d:2">
+      <li class="fw-phase fw-mini reveal" style="--d:2">
         <span class="fw-num">03</span>
         <h3>Matching and placement</h3>
         <p>Each step from referral to a family is recorded with its date and order.</p>
-        <ul class="fw-docs"><li>Committee meeting with prospective adoptive parents</li><li><abbr class="term" tabindex="0" data-tip="A child lives with their prospective adoptive parents while the court adoption order is awaited.">Pre-adoption foster care</abbr></li><li>Court adoption order</li><li>Birth certificate</li></ul>
       </li>
-      <li class="fw-phase fw-phase-final reveal" style="--d:3">
+      <li class="fw-phase fw-mini reveal" style="--d:3">
         <span class="fw-num">04</span>
         <h3>After placement</h3>
         <p>The record stays complete long after the child goes home.</p>
-        <ul class="fw-docs"><li>Post-adoption follow-up for two years</li><li>Records preserved for authorized root search</li></ul>
       </li>
     </ol>
-
-    <div class="fw-care">
-      <h3 class="cb-row-title reveal">Records are the start. The child is the point.</h3>
-      <div class="grid-3">
-        <article class="cb-track care-card reveal">
-          <span class="care-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></span>
-          <h4>Wellbeing, checked not assumed</h4>
-          <p>Health, schooling, emotional wellbeing and relationships are looked at regularly with the people caring for each child, so needs are noticed early.</p>
-        </article>
-        <article class="cb-track care-card reveal" style="--d:1">
-          <span class="care-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0114-5.3L20 9"/><path d="M20 4v5h-5"/><path d="M20 12a8 8 0 01-14 5.3L4 15"/><path d="M4 20v-5h5"/></svg></span>
-          <h4>Every case keeps moving</h4>
-          <p>Cases are reviewed regularly, and every next step has a person responsible and a date, so no child waits because a file went quiet.</p>
-        </article>
-        <article class="cb-track care-card reveal" style="--d:2">
-          <span class="care-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 11V7a2 2 0 014 0v4"/><path d="M11 9V5a2 2 0 014 0v6"/><path d="M15 9a2 2 0 014 0v4a7 7 0 01-7 7h-1a6 6 0 01-5-2.7L3 13.5a1.8 1.8 0 013-2L7 13"/></svg></span>
-          <h4>Care that helps children heal</h4>
-          <p>We support caregivers with trauma-informed practice, so day-to-day care is safe, warm and consistent, and each child's voice is heard.</p>
-        </article>
-      </div>
-    </div>
-
-    <div class="cb-tracks">
-      <h3 class="cb-row-title reveal">Not every path leads to adoption, so the framework covers every outcome.</h3>
-      <div class="grid-3">
-        <article class="cb-track reveal">
-          <span class="cb-track-dot" style="--c:#E9A94B"></span>
-          <h4>Adoption</h4>
-          <p>From legal clearance to a court order and a new birth certificate, followed by two years of post-adoption follow-up.</p>
-        </article>
-        <article class="cb-track reveal" style="--d:1">
-          <span class="cb-track-dot" style="--c:#6FB3AE"></span>
-          <h4>Restoration</h4>
-          <p>Return to a parent, relative or guardian, documented with the <abbr class="term" tabindex="0" data-tip="Returning a child to their parents or guardian, made official by a restoration order.">restoration order</abbr> and who the child was restored to.</p>
-        </article>
-        <article class="cb-track reveal" style="--d:2">
-          <span class="cb-track-dot" style="--c:#F2C98B"></span>
-          <h4>Transfer</h4>
-          <p>A move to another institution or district, documented with the transfer order and destination, so the record travels with the child.</p>
-        </article>
-      </div>
-      <p class="cb-events reveal">Critical case events, such as a child going missing, are documented with the police intimation, <abbr class="term" tabindex="0" data-tip="First Information Report: The written report police register when a serious matter is reported to them, such as a missing child.">FIR</abbr> and legal papers they require.</p>
-    </div>
-
-    <div class="fw-how">
-      <h3 class="cb-row-title reveal">How we work with an institution</h3>
-      <ol class="fw-steps">
-        <li class="reveal"><b>Map current practice</b><span>We sit with staff and review how records are really created, kept and shared, not only what policy says.</span></li>
-        <li class="reveal" style="--d:1"><b>Agree the framework</b><span>Gaps are shared openly and framed around children, not blame, and every partner agrees the way forward.</span></li>
-        <li class="reveal" style="--d:2"><b>Define the handovers</b><span>Each step is made clear: who is responsible, which documents are needed, and which move with the child.</span></li>
-        <li class="reveal" style="--d:3"><b>Hand over the capacity</b><span>Staff are trained to keep it going, so the practice stays with the district after we step back.</span></li>
-      </ol>
+    <div class="teaser-actions reveal">
+      <a href="framework.html" class="btn btn-amber">Read the full framework</a>
+      <a href="#contact" class="btn btn-ghost-light" data-topic="I would like to talk about bringing the documentation framework to our institution.">Talk to us about your institution</a>
     </div>
   </div>
-</section>
-
-<!-- THE PATH -->
-<section id="path" class="section section-ink">
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow eyebrow-gold">The Path</p>
-      <h2 class="section-title">The path looks different for every child. The goal stays the same.</h2>
-    </div>
-    <ol class="path-list" id="path-list">
-      <li class="path-step reveal"><span class="step-num">1</span><span class="step-text">Know the child</span></li>
-      <li class="path-step reveal" style="--d:1"><span class="step-num">2</span><span class="step-text">Understand their story</span></li>
-      <li class="path-step reveal" style="--d:2"><span class="step-num">3</span><span class="step-text">Establish their identity</span></li>
-      <li class="path-step reveal" style="--d:3"><span class="step-num">4</span><span class="step-text">Understand and resolve their circumstances</span></li>
-      <li class="path-step reveal"><span class="step-num">5</span><span class="step-text">Prepare the child and the adults around them</span></li>
-      <li class="path-step reveal" style="--d:1"><span class="step-num">6</span><span class="step-text">Identify the right family-based pathway</span></li>
-      <li class="path-step reveal" style="--d:2"><span class="step-num">7</span><span class="step-text">Support the transition</span></li>
-      <li class="path-step path-step-final reveal" style="--d:3"><span class="step-num">8</span><span class="step-text">Strengthen the family</span></li>
-    </ol>
-    <div class="pathways-block reveal">
-      <p>The child's story determines the path. Depending on what is safe, appropriate, and legally possible, that may lead to:</p>
-      <ul class="pill-row">
-        <li class="pill">Return to birth family</li>
-        <li class="pill">Kinship care</li>
-        <li class="pill">Foster care</li>
-        <li class="pill">Adoption</li>
-        <li class="pill">Another legally appropriate permanent arrangement</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="section">
-  <div class="container">
-    <div class="section-head split">
-      <div class="reveal">
-        <p class="eyebrow">Why we exist</p>
-        <h2 class="section-title">No child should grow up in an institution, waiting on paperwork or decisions.</h2>
-      </div>
-      <div class="about-copy reveal" style="--d:1">
-        <p class="section-lead">Institutional care can keep a child safe, but too often a child spends years there without a family because records are incomplete, a story was never written down, or no family was prepared to receive them.</p>
-        <p class="section-lead">Path to Parivaar exists to close those gaps. We help government bodies and <abbr class="term" tabindex="0" data-tip="Non-governmental organisation: A not-for-profit organisation that works independently of government.">NGOs</abbr> caring for children build documentation frameworks under <abbr class="term" tabindex="0" data-tip="Central Adoption Resource Authority: The Government of India body, under the Ministry of Women and Child Development, that regulates adoption in India.">CARA</abbr> guidelines, working alongside the people already caring for children so the capacity we help build stays with the district after we step back.</p>
-      </div>
-    </div>
-    <div class="stats about-stats">
-      <div class="stat reveal"><span class="stat-num">Nashik first</span><span class="stat-label">beginning with the people caring for children in Nashik</span></div>
-      <div class="stat reveal" style="--d:1"><span class="stat-num"><abbr class="term" tabindex="0" data-tip="Central Adoption Resource Authority: The Government of India body, under the Ministry of Women and Child Development, that regulates adoption in India.">CARA</abbr>-aligned</span><span class="stat-label">every framework grounded in the law and the child's best interests</span></div>
-      <div class="stat reveal" style="--d:2"><span class="stat-num">Every path</span><span class="stat-label">home, relatives, foster care or adoption: whatever is right for the child</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- APPROACH -->
-<section id="approach" class="section section-sand">
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow">Our Approach</p>
-      <h2 class="section-title">What guides every decision we make about a child.</h2>
-    </div>
-    <div class="approach-grid">
-      <div class="principle reveal"><h3>Child-centered</h3><p>We begin with the individual child, not a predetermined outcome.</p></div>
-      <div class="principle reveal" style="--d:1"><h3>Family-centered</h3><p>Children thrive through safe, stable, meaningful family relationships.</p></div>
-      <div class="principle reveal" style="--d:2"><h3>Story-centered</h3><p>A child's history should not disappear because it is complicated.</p></div>
-      <div class="principle reveal" style="--d:3"><h3>Permanency-focused</h3><p>Temporary care should never become permanent by default.</p></div>
-      <div class="principle reveal"><h3>Trauma-informed</h3><p>We understand the impact of separation, loss, and institutional life.</p></div>
-      <div class="principle reveal" style="--d:1"><h3>Collaborative</h3><p>We strengthen the people and systems already working for children.</p></div>
-      <div class="principle reveal" style="--d:2"><h3>Legally grounded</h3><p>Every outcome follows the law, child protection, and the child's best interests.</p></div>
-      <div class="principle principle-local reveal" style="--d:3"><h3>Locally rooted</h3><p>We work in person with the people who care for Nashik's children, building relationships that last.</p></div>
-    </div>
+  <div class="next-up reveal">
+    <p class="next-q">Who is behind this work?</p>
+    <a class="next-link" href="#team"><span>Next: Who we are</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
   </div>
 </section>
 
 <!-- WHO WE ARE -->
-<section id="team" class="section team">
+<section id="team" class="section team" data-chapter="Who we are">
   <div class="container team-grid">
     <figure class="team-photo reveal">
       <img src="assets/img/team.jpeg" alt="Emily and Jonathan Kurapati" width="961" height="1280" loading="lazy" decoding="async">
@@ -605,40 +415,14 @@
       </div>
     </div>
   </div>
-</section>
-
-<!-- GET INVOLVED -->
-<section id="involved" class="section">
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow">Get Involved</p>
-      <h2 class="section-title">Walk this path with us.</h2>
-    </div>
-    <div class="grid-3">
-      <article class="card card-hover involve-card reveal">
-        <div class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V9l7-5 7 5v12"/><path d="M9 21v-6h6v6"/></svg></div>
-        <h3 class="card-title">Institutions and agencies</h3>
-        <p><abbr class="term" tabindex="0" data-tip="Child Care Institution: A children&#x27;s home or shelter registered under the Juvenile Justice Act to care for children who need care and protection.">CCIs</abbr>, <abbr class="term" tabindex="0" data-tip="Specialised Adoption Agency: An institution recognised to care for children who are orphaned, abandoned or surrendered, and to place them for adoption.">Specialised Adoption Agencies</abbr>, foster-care organizations, and government partners: let us support your staff and the children in your care.</p>
-        <a href="#contact" class="link-arrow" data-topic="I represent an institution or agency and would like to start a partnership.">Start a partnership <span aria-hidden="true">→</span></a>
-      </article>
-      <article class="card card-hover involve-card reveal" style="--d:1">
-        <div class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 5.5-7 10-7 10z"/></svg></div>
-        <h3 class="card-title">Families and caregivers</h3>
-        <p>Prospective adoptive parents, foster and kinship families: find preparation, training, and support before and after a child comes home.</p>
-        <a href="#contact" class="link-arrow" data-topic="We are a family or caregiver looking for preparation and support.">Find support <span aria-hidden="true">→</span></a>
-      </article>
-      <article class="card card-hover involve-card reveal" style="--d:2">
-        <div class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M17 7H9.5a3 3 0 000 6h5a3 3 0 010 6H6"/></svg></div>
-        <h3 class="card-title">Supporters and funders</h3>
-        <p>Professionals, volunteers, and corporate or philanthropic partners: help more children in India grow up with a family, not without one.</p>
-        <a href="#contact" class="link-arrow" data-topic="I would like to support the work of Path to Parivaar.">Support the work <span aria-hidden="true">→</span></a>
-      </article>
-    </div>
+  <div class="next-up reveal">
+    <p class="next-q">Still have a question or two?</p>
+    <a class="next-link" href="#faq"><span>Next: Questions</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
   </div>
 </section>
 
 <!-- FAQ -->
-<section id="faq" class="section section-sand">
+<section id="faq" class="section section-sand" data-chapter="Questions">
   <div class="container faq-wrap">
     <div class="section-head reveal">
       <p class="eyebrow">Questions</p>
@@ -654,54 +438,23 @@
         <div class="faq-body"><p>No. We do not assume adoption is right for every child. Depending on what is safe, appropriate, and legally possible, the path may lead to return to birth family, kinship care, foster care, adoption, or another legally appropriate permanent arrangement.</p></div>
       </details>
       <details class="faq reveal">
-        <summary>Who do you work with?</summary>
-        <div class="faq-body"><p>We work with government bodies and <abbr class="term" tabindex="0" data-tip="Non-governmental organisation: A not-for-profit organisation that works independently of government.">NGOs</abbr> caring for children: Child Care Institutions (<abbr class="term" tabindex="0" data-tip="Child Care Institution: A children&#x27;s home or shelter registered under the Juvenile Justice Act to care for children who need care and protection.">CCIs</abbr>), Specialised Adoption Agencies, child welfare authorities, and foster-care organisations. We help them build documentation frameworks under <abbr class="term" tabindex="0" data-tip="Central Adoption Resource Authority: The Government of India body, under the Ministry of Women and Child Development, that regulates adoption in India.">CARA</abbr> guidelines, and we support adoptive, foster, and kinship families. We are starting in Nashik, and our hope is to walk alongside its institutions, adoption agencies and child welfare authorities.</p></div>
-      </details>
-      <details class="faq reveal">
         <summary>Is Path to Parivaar a registered organisation?</summary>
         <div class="faq-body"><p>Yes. Path to Parivaar Foundation is a not-for-profit company registered under <abbr class="term" tabindex="0" data-tip="A not-for-profit company registered under Section 8 of the Companies Act, 2013. Its income can only be used for its charitable aims.">Section 8</abbr> of the Companies Act, 2013, incorporated on 17 October 2026 (<abbr class="term" tabindex="0" data-tip="Corporate Identity Number: The unique number the Registrar of Companies gives every registered company in India.">CIN</abbr> U88100MR2026NPL481887). We are also registered on NITI Aayog's <abbr class="term" tabindex="0" data-tip="NITI Aayog&#x27;s online register of NGOs. NITI Aayog (National Institution for Transforming India) is the Government of India&#x27;s policy think tank.">NGO Darpan</abbr> portal (Darpan ID MH/2026/1256345).</p></div>
       </details>
-      <details class="faq reveal">
-        <summary>How can I get involved?</summary>
-        <div class="faq-body"><p>Institutions can partner with us to support their staff and children, families can find preparation and support, and professionals, volunteers, and funders can help more children move from institutions to families. Write to <a href="mailto:hello@pathtoparivaar.org">hello@pathtoparivaar.org</a>, or call or WhatsApp <a href="tel:+918087760630">+91 80877 60630</a>.</p></div>
-      </details>
     </div>
-    <div class="glossary" id="glossary">
-      <div class="section-head reveal">
-        <p class="eyebrow">Words we use</p>
-        <h2 class="section-title">A short glossary.</h2>
-      </div>
-      <dl class="gl-list">
-        <div class="gl-item reveal"><dt>CARA <span>Central Adoption Resource Authority</span></dt><dd>The Government of India body, under the Ministry of Women and Child Development, that regulates adoption in India.</dd></div>
-        <div class="gl-item reveal"><dt>CCI <span>Child Care Institution</span></dt><dd>A children&#x27;s home or shelter registered under the Juvenile Justice Act to care for children who need care and protection.</dd></div>
-        <div class="gl-item reveal"><dt>CWC <span>Child Welfare Committee</span></dt><dd>The district body that decides on the care, protection and rehabilitation of children in need of care. Decisions about a child rest with it.</dd></div>
-        <div class="gl-item reveal"><dt>SAA <span>Specialised Adoption Agency</span></dt><dd>An institution recognised to care for children who are orphaned, abandoned or surrendered, and to place them for adoption.</dd></div>
-        <div class="gl-item reveal"><dt>NGO <span>Non-governmental organisation</span></dt><dd>A not-for-profit organisation that works independently of government.</dd></div>
-        <div class="gl-item reveal"><dt>Section 8 company</dt><dd>A not-for-profit company registered under Section 8 of the Companies Act, 2013. Its income can only be used for its charitable aims.</dd></div>
-        <div class="gl-item reveal"><dt>NGO Darpan</dt><dd>NITI Aayog&#x27;s online register of NGOs. NITI Aayog (National Institution for Transforming India) is the Government of India&#x27;s policy think tank.</dd></div>
-        <div class="gl-item reveal"><dt>CIN <span>Corporate Identity Number</span></dt><dd>The unique number the Registrar of Companies gives every registered company in India.</dd></div>
-        <div class="gl-item reveal"><dt>FIR <span>First Information Report</span></dt><dd>The written report police register when a serious matter is reported to them, such as a missing child.</dd></div>
-        <div class="gl-item reveal"><dt>Kinship care</dt><dd>Care of a child by grandparents, other relatives or close family friends.</dd></div>
-        <div class="gl-item reveal"><dt>Foster care</dt><dd>A family looks after a child in their own home for a time, while longer-term plans are made.</dd></div>
-        <div class="gl-item reveal"><dt>Pre-adoption foster care</dt><dd>A child lives with their prospective adoptive parents while the court adoption order is awaited.</dd></div>
-        <div class="gl-item reveal"><dt>Legally free for adoption</dt><dd>A declaration by the Child Welfare Committee that a child can be placed for adoption.</dd></div>
-        <div class="gl-item reveal"><dt>Media declaration</dt><dd>Publishing an abandoned child&#x27;s details, such as in newspapers, so their family can come forward before the child is declared free for adoption.</dd></div>
-        <div class="gl-item reveal"><dt>Child study report</dt><dd>A report on a child&#x27;s background, health and needs, prepared by the adoption agency to help find the right family.</dd></div>
-        <div class="gl-item reveal"><dt>Root search</dt><dd>The process by which an adopted person can seek information about their origins and birth family, under CARA&#x27;s rules.</dd></div>
-        <div class="gl-item reveal"><dt>Restoration</dt><dd>Returning a child to their parents or guardian, made official by a restoration order.</dd></div>
-        <div class="gl-item reveal"><dt>Taluka</dt><dd>A sub-division of a district in Maharashtra and other states, made up of a town and its nearby villages.</dd></div>
-        <div class="gl-item reveal"><dt>Parivaar (परिवार)</dt><dd>Hindi and Marathi for family.</dd></div>
-        <div class="gl-item reveal"><dt>Kahani (कहानी)</dt><dd>Hindi for story.</dd></div>
-      </dl>
-    </div>
+    <p class="faq-more reveal">New to some of these terms? See the <a href="framework.html#glossary">glossary</a>.</p>
+  </div>
+  <div class="next-up reveal">
+    <p class="next-q">Ready to take the first step?</p>
+    <a class="next-link" href="#contact"><span>Next: Contact us</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="contact reveal">
+<section id="contact" class="contact reveal" data-chapter="Contact">
   <div class="contact-glow" aria-hidden="true"></div>
   <div class="contact-copy">
-    <h2 class="contact-title">Because every child deserves to know their story.</h2>
+    <h2 class="contact-title">Because no child should grow up without a family.</h2>
     <p>Write to us and we will get back to you. We are based in Nashik, Maharashtra.</p>
     <a class="contact-email" href="mailto:hello@pathtoparivaar.org">
       <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 7l9 6 9-6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
@@ -742,13 +495,12 @@
       <div class="footer-note">Not-for-profit company registered under <abbr class="term" tabindex="0" data-tip="A not-for-profit company registered under Section 8 of the Companies Act, 2013. Its income can only be used for its charitable aims.">Section 8</abbr> of the Companies Act, 2013<br><abbr class="term" tabindex="0" data-tip="Corporate Identity Number: The unique number the Registrar of Companies gives every registered company in India.">CIN</abbr> U88100MR2026NPL481887 · <abbr class="term" tabindex="0" data-tip="NITI Aayog&#x27;s online register of NGOs. NITI Aayog (National Institution for Transforming India) is the Government of India&#x27;s policy think tank.">NGO Darpan</abbr> ID MH/2026/1256345</div>
     </div>
     <nav aria-label="Footer" class="footer-nav">
-      <a href="#nashik">Nashik</a>
-      <a href="#work">Our Work</a>
-      <a href="#framework">Framework</a>
-      <a href="#path">The Path</a>
-      <a href="#about">About</a>
+      <a href="#involved">How to help</a>
+      <a href="#work">What we do</a>
+      <a href="framework.html">Framework</a>
+      <a href="#team">Who we are</a>
       <a href="#faq">FAQ</a>
-      <a href="#glossary">Glossary</a>
+      <a href="framework.html#glossary">Glossary</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
