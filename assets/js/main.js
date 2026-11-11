@@ -180,7 +180,15 @@
   var slides = Array.prototype.slice.call(document.querySelectorAll('#hero-slides .slide'));
   var dots = Array.prototype.slice.call(document.querySelectorAll('#hero-dots .dot'));
   var pauseBtn = document.getElementById('hero-pause');
-  var SLIDE_MS = 7000;
+  // Each slide stays up long enough to read at a normal pace (about 230 words a minute,
+  // 3.8 words a second), plus 2 seconds to take in the heading and visual. Button labels
+  // are not counted. Never shorter than 8 seconds or longer than 45.
+  var slideMs = slides.map(function (sl) {
+    var copy = sl.cloneNode(true);
+    copy.querySelectorAll('.hero-ctas').forEach(function (el) { el.remove(); });
+    var words = (copy.textContent || '').trim().split(/\s+/).filter(Boolean).length;
+    return Math.max(8000, Math.min(45000, Math.round(2000 + words / 3.8 * 1000)));
+  });
   var current = 0;
   var timer = null;
   var leaveTimer = null;
@@ -188,7 +196,7 @@
   var userPaused = false;
   var hoverPaused = false;
 
-  hero.style.setProperty('--slide-ms', SLIDE_MS + 'ms');
+  hero.style.setProperty('--slide-ms', slideMs[0] + 'ms');
   hero.setAttribute('data-theme', slides[0].getAttribute('data-theme'));
 
   function setFocusable(slide, on) {
@@ -228,6 +236,7 @@
       fill.style.animation = '';
     });
     current = index;
+    hero.style.setProperty('--slide-ms', slideMs[index] + 'ms');
     fitHeight();
     restart();
   }
@@ -243,7 +252,7 @@
   function restart() {
     clearTimeout(timer);
     if (userPaused || hoverPaused || document.hidden || !heroInView) return;
-    timer = setTimeout(function () { goTo(current + 1); }, SLIDE_MS);
+    timer = setTimeout(function () { goTo(current + 1); }, slideMs[current]);
   }
 
   function setPaused() {
