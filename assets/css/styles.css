@@ -280,6 +280,23 @@ h1, h2, h3, p { margin: 0; }
   position: absolute; right: -80px; top: 30%; width: 380px; height: 380px; border-radius: 50%; pointer-events: none;
   background: radial-gradient(circle, rgba(233,169,75,.22), transparent 65%); animation: float-b 18s ease-in-out infinite;
 }
+/* slide 1 welcome card */
+.visual-welcome { justify-content: center; gap: clamp(22px, 4.5vh, 48px); }
+.visual-welcome::before {
+  content: ""; position: absolute; left: -120px; top: -140px; width: 460px; height: 460px; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(circle, rgba(233,169,75,.22), transparent 65%); animation: float-b 18s ease-in-out infinite;
+}
+.vc-top { position: relative; display: flex; align-items: center; gap: clamp(18px, 2.4vw, 32px); }
+.medallion {
+  position: relative; flex-shrink: 0; width: clamp(92px, min(10vw, 15vh), 150px); aspect-ratio: 1; border-radius: 50%;
+  display: grid; place-items: center; background: rgba(255,255,255,.07);
+  box-shadow: 0 0 0 1px rgba(242,201,139,.35), 0 18px 40px -18px rgba(0,0,0,.5), inset 0 0 40px rgba(242,201,139,.12);
+  animation: word-float 7s ease-in-out infinite;
+}
+.medallion img { width: 66%; height: auto; }
+.medallion-ring { position: absolute; inset: -9px; border-radius: 50%; border: 1.5px dashed rgba(242,201,139,.45); animation: spin-slow 40s linear infinite; }
+.visual-welcome .word-feature { animation: none; }
+.visual-welcome .visual-body { padding-top: clamp(18px, 3.5vh, 36px); border-top: 1px solid rgba(255,255,255,.16); }
 .word-feature { position: relative; display: flex; flex-direction: column; gap: 10px; animation: word-float 7s ease-in-out infinite; }
 @keyframes word-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
 .word-deva {
@@ -1020,7 +1037,7 @@ abbr.term:hover, abbr.term:focus-visible, abbr.term.is-open { text-decoration-co
   .hero-ctas .btn { height: clamp(46px, 6.2vh, 56px); }
   .slide-visual { min-height: 0; }
   .visual-card { min-height: 0; height: 100%; padding: clamp(22px, 4vh, 56px); gap: clamp(10px, 2.2vh, 28px); }
-  .word-deva { font-size: clamp(40px, min(6.6vw, 9vh), 104px); }
+  .word-deva { font-size: clamp(40px, min(6vw, 8.6vh), 100px); }
   .word-meta { font-size: clamp(13px, 1.8vh, 15px); }
   .visual-quote { font-size: clamp(22px, min(3.2vw, 4.6vh), 44px); }
   .visual-teal .visual-quote { font-size: clamp(19px, min(2.4vw, 3.6vh), 38px); }
@@ -1095,6 +1112,12 @@ abbr.term:hover, abbr.term:focus-visible, abbr.term.is-open { text-decoration-co
   .brand-mark { width: 40px; height: 40px; }
   .visual-text { font-size: 15px; }
   .records { height: 170px; }
+  .medallion { width: 76px; }
+  .visual-welcome .word-deva { font-size: 50px; }
+  .visual-welcome .word-meta { flex-direction: column; align-items: flex-start; gap: 2px; font-size: 13.5px; }
+  .visual-welcome .word-meta span, .visual-welcome .word-meta em { white-space: nowrap; }
+  .visual-welcome .word-meta em { padding-left: 0; border-left: 0; }
+  .medallion-ring { inset: -6px; }
   .card-mark { width: 200px; right: -50px; top: auto; bottom: -30px; margin-top: 0; opacity: .07; }
   .record { width: 230px; left: calc(var(--i) * 22px); top: calc(var(--i) * 36px); padding: 14px 16px; }
   .outcomes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
