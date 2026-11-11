@@ -461,6 +461,17 @@
   window.addEventListener('scroll', hideTip, { passive: true });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') hideTip(); });
 
+  /* ---------- Myths: show or hide all the truths ---------- */
+  var mythsToggle = document.getElementById('myths-toggle');
+  if (mythsToggle) {
+    mythsToggle.addEventListener('click', function () {
+      var open = mythsToggle.getAttribute('aria-pressed') !== 'true';
+      document.querySelectorAll('#myths details.myth').forEach(function (d) { d.open = open; });
+      mythsToggle.setAttribute('aria-pressed', String(open));
+      mythsToggle.textContent = open ? 'Hide the truths' : 'Show all the truths';
+    });
+  }
+
   /* ---------- Chat ---------- */
   var chat = document.getElementById('chat');
   var fab = document.getElementById('chat-fab');
