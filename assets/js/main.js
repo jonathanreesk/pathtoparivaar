@@ -335,10 +335,13 @@
       (name.value ? message : name).focus({ preventScroll: true });
     }, reduceMotion ? 0 : 650);
   }
+  // A topic passed from another page (index.html?topic=...#contact) fills in the message
+  var topicParam = new URLSearchParams(location.search).get('topic');
+  if (topicParam && document.getElementById('contact-form')) setTimeout(function () { prefillContact(topicParam); }, 400);
   document.querySelectorAll('a[data-topic]').forEach(function (a) {
     a.addEventListener('click', function (e) {
-      if (!form) return; // other pages follow the link to the home page contact form
       e.preventDefault();
+      if (!document.getElementById('contact-form')) { location.href = 'index.html?topic=' + encodeURIComponent(a.getAttribute('data-topic')) + '#contact'; return; }
       prefillContact(a.getAttribute('data-topic'));
     });
   });

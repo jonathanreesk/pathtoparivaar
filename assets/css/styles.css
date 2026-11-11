@@ -906,6 +906,26 @@ h1, h2, h3, p { margin: 0; }
 .fear-head { display: flex; align-items: center; gap: 12px; font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--rust); }
 .fear:hover .fear-ic { background: var(--teal); color: var(--white); }
 
+.callout {
+  margin-top: 32px; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 20px 28px;
+  padding: clamp(24px, 3vw, 36px); border-radius: var(--radius-lg); background: var(--white); border: 2px solid var(--amber); box-shadow: var(--shadow-md);
+}
+.callout-ic { width: 60px; height: 60px; border-radius: 50%; display: grid; place-items: center; background: #FBEBD2; color: var(--rust); }
+.callout-ic svg { width: 28px; height: 28px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.callout-tag { font-size: 12.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--rust); }
+.callout h3 { margin-top: 6px; font-family: var(--serif); font-size: clamp(22px, 2.2vw, 28px); font-weight: 500; line-height: 1.25; }
+.callout-body > p:last-child { margin-top: 8px; font-size: 16.5px; line-height: 1.65; color: var(--ink-2); max-width: 720px; }
+.fear-link { margin-top: auto; padding-top: 4px; font-size: 15px; font-weight: 600; color: var(--teal); text-decoration: none; }
+.fear-link span { display: inline-block; transition: transform .3s var(--ease-out); }
+.fear-link:hover span { transform: translateX(5px); }
+.invite {
+  margin-top: 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px 32px;
+  padding: 26px 30px; border-radius: var(--radius); background: var(--sand); border: 1px solid var(--line);
+}
+.invite h3 { font-family: var(--serif); font-size: clamp(22px, 2.2vw, 26px); font-weight: 500; }
+.invite p { margin-top: 6px; font-size: 16px; line-height: 1.6; color: var(--ink-2); max-width: 640px; }
+.invite-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+
 /* ---------- Resources ---------- */
 .feature-guide {
   display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); border-radius: var(--radius-lg); overflow: hidden;
@@ -1244,6 +1264,7 @@ abbr.term:hover, abbr.term:focus-visible, abbr.term.is-open { text-decoration-co
   .path-step::after { display: none; }
   .contact { grid-template-columns: 1fr; gap: 40px; }
   .contact-row { grid-template-columns: 1fr; }
+  .callout { grid-template-columns: 1fr; }
   .mt-row { grid-template-columns: 1fr; padding: 16px; gap: 12px; }
   .mt-num { width: 36px; height: 36px; }
   .mt-truth { grid-column: auto; padding: 16px 18px; }
